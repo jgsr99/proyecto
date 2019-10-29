@@ -10,6 +10,7 @@ public class Proyecto {
         int men =0;
         int num1=0, num2=0, sum, res, mul, div;
         int validar=0;
+        int a=0, b=0, c=0, d=0;
         operar menu = new operar(); 
         do{
             try{
@@ -17,7 +18,9 @@ public class Proyecto {
                     + "\n 1. Operaciones basicas"
                     + "\n 2. Arreglo"
                     + "\n 3. Matrices"
-                    + "\n 4. Salir"));
+                    + "\n 4. Método Burbuja"
+                    + "\n 5. Método Shell"
+                    + "\n 6. Salir"));
             }catch(Exception ex){
                JOptionPane.showMessageDialog(null, "Debe ingresar solo valores numericos");
             }
@@ -139,13 +142,61 @@ public class Proyecto {
                     JOptionPane.showMessageDialog(null, "Matrices");
                     break;
                 case 4:
+                                do{
+                            try{
+                        a = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su primer valor: "));
+                        validar =1;
+                        }catch(Exception ex){
+                               JOptionPane.showMessageDialog(null, "Debe ingresar solo valores numericos");
+                               validar =0;
+                            }
+                            }while(validar==0);
+                            do{
+                            try{
+                        b = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su segundo valor: "));
+                        validar =1;
+                        }catch(Exception ex){
+                               JOptionPane.showMessageDialog(null, "Debe ingresar solo valores numericos");
+                               validar =0;
+                            }
+                            }while(validar==0);
+                            do{
+                            try{
+                        c = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su tercer valor: "));
+                        validar =1;
+                        }catch(Exception ex){
+                               JOptionPane.showMessageDialog(null, "Debe ingresar solo valores numericos");
+                               validar =0;
+                            }
+                            }while(validar==0);
+                            do{
+                            try{
+                        d = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su cuarto valor: "));
+                        validar =1;
+                        }catch(Exception ex){
+                               JOptionPane.showMessageDialog(null, "Debe ingresar solo valores numericos");
+                               validar =0;
+                            }
+                            }while(validar==0);
+        int []arreglo = {a,b,c,d};
+        ordenar o = new ordenar();
+        o.ordenarBurbuja(arreglo);
+        
+        for (int i=0;i<arreglo.length;i++){
+         JOptionPane.showMessageDialog(null, "Su valores organizados de menor a mayor son:"+arreglo[i]);   
+        }
+                    break;
+                case 5:
+                    JOptionPane.showMessageDialog(null, "Método Shell");
+                    break;        
+                case 6:
                     JOptionPane.showMessageDialog(null, "Salir");
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Ingresó una opción no valida");
                     break;
             }
-            }while(opcion != 4);
+            }while(opcion != 6);
         }
     }
     
