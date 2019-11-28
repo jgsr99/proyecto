@@ -1,7 +1,6 @@
 package proyecto;
 
 import javax.swing.JOptionPane;
-import proyecto.pruebaarbol.PruebaArbol;
 
 public class Proyecto {
 
@@ -180,7 +179,7 @@ public class Proyecto {
                             mat = Integer.parseInt(JOptionPane.showInputDialog("2. Matrices \n"
                                     + "\n A. Cargar Datos"
                                     + "\n B. Mostrar Datos"
-                                    + "\n C. volver"));
+                                    + "\n C. volver"));   
                         } catch (Exception ex) {
                             JOptionPane.showMessageDialog(null, "Debe ingresar solo valores numericos");
                         }
@@ -424,7 +423,10 @@ public class Proyecto {
                     JOptionPane.showMessageDialog(null, "Arboles");
                     PruebaArbol arbol = new PruebaArbol();
                     
-                    JOptionPane.showMessageDialog(null, arbol);
+                    JOptionPane.showMessageDialog(null, "Pre Orden: \n");
+                    JOptionPane.showMessageDialog(null, "in Orden: \n");
+                    JOptionPane.showMessageDialog(null, "post Orden: \n");
+                    
                     break;
                 case 9:
                     do {

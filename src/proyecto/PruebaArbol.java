@@ -1,8 +1,8 @@
 
-package proyecto.pruebaarbol;
+package proyecto;
 
+import PruebaArbol.Nodo;
 import javax.swing.JOptionPane;
-import proyecto.pruebaarbol.model.Nodo;
 
 public class PruebaArbol {
 
@@ -27,7 +27,7 @@ public class PruebaArbol {
         postOrden(raiz);
     }
 
-    private static void preOrden(Nodo raiz) {  //  raiz es 1  ///  luego el nodo izquierdo pasa hacer la raiz(2)  // nodo iz pasa hacer el 4
+    public static void preOrden(Nodo raiz) {  //  raiz es 1  ///  luego el nodo izquierdo pasa hacer la raiz(2)  // nodo iz pasa hacer el 4
         if (raiz != null) {//La raiz es distento de null si
             JOptionPane.showMessageDialog(null, "[" + raiz.getDato() + "]");   //  Muestro el 1     // lo muestro  2   // muestro 4
             preOrden(raiz.getNodoIzquierdo());  // llamo al nodo izquiero de 1  //  llamo al nodo izquierdo de 2  -- que seria 4  // llamo al nodo izquierdo de 4 que es null
@@ -53,3 +53,4 @@ public class PruebaArbol {
         }
     }
 }
+
