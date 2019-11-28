@@ -1,7 +1,7 @@
 package proyecto;
 
 import javax.swing.JOptionPane;
-import proyecto.model.Nodo;
+import proyecto.pruebaarbol.PruebaArbol;
 
 public class Proyecto {
 
@@ -214,9 +214,9 @@ public class Proyecto {
                     do {
                         try {
                             or = Integer.parseInt(JOptionPane.showInputDialog("Ordenamien \n"
-                                    + "\n 1. Método Burbuja"
-                                    + "\n 2. Método Shell"
-                                    + "\n 3. Volver"));
+                                    + "\n A. Método Burbuja"
+                                    + "\n B. Método Shell"
+                                    + "\n C. Volver"));
                         } catch (Exception ex) {
                             JOptionPane.showMessageDialog(null, "Debe ingresar solo valores numericos");
                         }
@@ -355,7 +355,8 @@ public class Proyecto {
                     JOptionPane.showMessageDialog(null, "Pilas");
                     break;
                 case 7:
-                    int opcion1 = 0, elemento = 0;
+                    int opcion1 = 0,
+                     elemento = 0;
                     cola colita = new cola();
 
                     do {
@@ -421,6 +422,9 @@ public class Proyecto {
                     break;
                 case 8:
                     JOptionPane.showMessageDialog(null, "Arboles");
+                    PruebaArbol arbol = new PruebaArbol();
+                    
+                    JOptionPane.showMessageDialog(null, arbol);
                     break;
                 case 9:
                     do {
