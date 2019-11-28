@@ -1,6 +1,7 @@
 package proyecto;
 
 import javax.swing.JOptionPane;
+import proyecto.model.Nodo;
 
 public class Proyecto {
 
@@ -354,7 +355,69 @@ public class Proyecto {
                     JOptionPane.showMessageDialog(null, "Pilas");
                     break;
                 case 7:
-                    JOptionPane.showMessageDialog(null, "Colas");
+                    int opcion1 = 0, elemento = 0;
+                    cola colita = new cola();
+
+                    do {
+
+                        try {
+                            opcion1 = Integer.parseInt(JOptionPane.showInputDialog(null, "1. Insertar un elemento en la Cola\n"
+                                    + "2. Quitar un elemento en la Cola\n"
+                                    + "3. ¿La cola está vacia?\n"
+                                    + "4. Elemento ubicado al inicio de la cola\n"
+                                    + "5. Tamaño de la cola\n"
+                                    + "6. Salir", "Menú de opciones de una Cola",
+                                    JOptionPane.QUESTION_MESSAGE));
+
+                            switch (opcion1) {
+                                case 1:
+                                    elemento = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el elemento", "Insertando en la Cola", JOptionPane.QUESTION_MESSAGE));
+                                    colita.insertar(elemento);
+                                    break;
+                                case 2:
+                                    if (!colita.estaVacia()) {
+                                        JOptionPane.showMessageDialog(null, "El elemento atendido es " + colita.quitar(), "Quitando elemento de la cola", JOptionPane.INFORMATION_MESSAGE);
+                                    } else {
+                                        JOptionPane.showMessageDialog(null, "La cola está vacia", "Cola Vacia", JOptionPane.INFORMATION_MESSAGE);
+                                    }
+
+                                    break;
+                                case 3:
+                                    if (colita.estaVacia()) {
+                                        JOptionPane.showMessageDialog(null, "La Cola está Vacia", "Cola Vacia", JOptionPane.INFORMATION_MESSAGE);
+
+                                    } else {
+                                        JOptionPane.showMessageDialog(null, "La Cola no está Vacia", "Cola no Vacia", JOptionPane.INFORMATION_MESSAGE);
+                                    }
+                                    break;
+                                case 4:
+                                    if (!colita.estaVacia()) {
+                                        JOptionPane.showMessageDialog(null, "El elemento ubicado al inicio de la Cola es " + colita.inicioCola(), "Cola Vacia", JOptionPane.INFORMATION_MESSAGE);
+                                    } else {
+                                        JOptionPane.showMessageDialog(null, "La Cola está Vacia", "Cola Vacia", JOptionPane.INFORMATION_MESSAGE);
+                                    }
+
+                                    break;
+                                case 5:
+                                    JOptionPane.showMessageDialog(null, "El tamaño de la Cola es " + colita.tamanioCola(), "Cola Vacia", JOptionPane.INFORMATION_MESSAGE);
+
+                                    break;
+
+                                case 6:
+                                    JOptionPane.showMessageDialog(null, "Aplicación Finalizada", "Fin", JOptionPane.INFORMATION_MESSAGE);
+                                    break;
+
+                                default:
+                                    JOptionPane.showMessageDialog(null, "Opción incorrecta", "¡Cuidado!", JOptionPane.INFORMATION_MESSAGE);
+
+                            }
+
+                        } catch (NumberFormatException nnn) {
+                            JOptionPane.showMessageDialog(null, "Error" + nnn.getMessage());
+
+                        }
+
+                    } while (opcion1 != 6);
                     break;
                 case 8:
                     JOptionPane.showMessageDialog(null, "Arboles");
